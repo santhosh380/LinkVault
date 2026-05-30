@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkKeep Hub - Premium Workspace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="auth-overlay" class="auth-overlay">
+        <div class="auth-card">
+            <h2 id="auth-title">Welcome to LinkKeep Pro</h2>
+            <p id="auth-subtitle">Sign up to unlock infinite spaces and nested folders.</p>
+            
+            <form id="auth-form">
+                <div class="form-group">
+                    <label for="auth-email">Email Address</label>
+                    <input type="email" id="auth-email" placeholder="name@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="auth-password">Password</label>
+                    <input type="password" id="auth-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" id="auth-submit-btn" class="btn-primary">Create Account</button>
+            </form>
+            
+            <p class="auth-toggle">
+                <span id="auth-toggle-text">Already have an account?</span> 
+                <a href="#" id="auth-toggle-link">Sign In</a>
+            </p>
+        </div>
+    </div>
+
+    <nav class="top-nav">
+        <div class="nav-brand">🔗 LinkKeep <span class="badge">PRO</span></div>
+        <div class="search-bar-container">
+            <input type="text" id="global-search" placeholder="⚡ Search titles, URLs, tags (Press '/' to focus)...">
+        </div>
+        <div class="user-profile">
+            <span id="user-display-email">guest@linkkeep.io</span>
+            <button id="logout-btn" class="btn-text">Logout</button>
+        </div>
+    </nav>
+
+    <div class="app-container">
+        
+        <aside class="left-panel">
+            <div class="panel-section">
+                <h3>SPACES</h3>
+                <ul id="spaces-list" class="nav-list">
+                    <li class="active" data-space="all">🌐 All Saved Items</li>
+                    <li data-space="work">💼 Work Assets</li>
+                    <li data-space="personal">🏠 Personal Stash</li>
+                    <li data-space="dev">🚀 Side Projects</li>
+                </ul>
+                <button id="add-space-btn" class="btn-secondary-sm">+ New Space</button>
+            </div>
+            
+            <div class="panel-section">
+                <h3>POPULAR TAGS</h3>
+                <div id="tags-cloud" class="tags-cloud">
+                    <span class="tag" data-tag="inspiration">#inspiration</span>
+                    <span class="tag" data-tag="tutorials">#tutorials</span>
+                    <span class="tag" data-tag="tools">#tools</span>
+                    <span class="tag" data-tag="videos">#videos</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="center-panel">
+            <section class="quick-add-section">
+                <form id="quick-add-form">
+                    <input type="text" id="new-link-title" placeholder="Give it a brilliant title..." required>
+                    <input type="url" id="new-link-url" placeholder="Paste link here (https://...)" required>
+                    <input type="text" id="new-link-tags" placeholder="Tags (comma separated, e.g. tools, coding)">
+                    <button type="submit" class="btn-accent">Save Link</button>
+                </form>
+            </section>
+
+            <div class="toolbar">
+                <h2 id="current-space-title">All Saved Items</h2>
+                <div class="view-toggles">
+                    <button id="view-grid" class="view-btn active">Grid</button>
+                    <button id="view-list" class="view-btn">List</button>
+                </div>
+            </div>
+
+            <div id="links-wrapper" class="grid-view">
+                </div>
+        </main>
+
+        <aside id="right-inspector" class="right-panel hidden">
+            <div class="inspector-header">
+                <h3>Item Inspector</h3>
+                <button id="close-inspector" class="close-btn">&times;</button>
+            </div>
+            <div class="inspector-content">
+                <div class="form-group">
+                    <label>Edit Title</label>
+                    <input type="text" id="inspect-title" class="input-inline-edit">
+                </div>
+                <div class="form-group">
+                    <label>Destination Link</label>
+                    <input type="url" id="inspect-url" class="input-inline-edit">
+                </div>
+                <div class="form-group">
+                    <label>Assigned Tags</label>
+                    <div id="inspect-tags-display" class="tags-cloud"></div>
+                </div>
+                <hr class="divider">
+                <div class="inspector-meta">
+                    <p>Created: <span id="inspect-date">-</span></p>
+                    <p>Clicks Tracked: <span id="inspect-clicks">0</span></p>
+                </div>
+                <button id="inspect-delete-btn" class="btn-danger">Delete Link Permanently</button>
+            </div>
+        </aside>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
